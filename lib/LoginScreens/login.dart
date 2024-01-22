@@ -464,7 +464,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text(
-                                        'Invalid Credentials',
+                                        'Failed to Sign In with Google',
                                       ),
                                       backgroundColor: Colors.red,
                                       elevation: 10,

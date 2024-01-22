@@ -6,13 +6,15 @@ class GoogleSignInHelper {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<User?> signInWithGoogle() async {
-    try {
-      final GoogleSignInAccount? googleSignInAccount =
-          await _googleSignIn.signIn();
-      if (googleSignInAccount == null) {
-        return null; // User canceled the sign-in process
-      }
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
 
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    final GoogleSignInAccount? googleSignInAccount =
+        await googleSignIn.signIn();
+
+    if (googleSignInAccount != null) {
       final GoogleSignInAuthentication googleSignInAuthentication =
           await googleSignInAccount.authentication;
 
@@ -21,14 +23,23 @@ class GoogleSignInHelper {
         idToken: googleSignInAuthentication.idToken,
       );
 
-      final UserCredential authResult =
-          await _auth.signInWithCredential(credential);
-      final User? user = authResult.user;
-      return user;
-    } catch (e) {
-      print('Error signing in with Google: $e');
-      return null;
+      try {
+        final UserCredential userCredential =
+            await auth.signInWithCredential(credential);
+
+        user = userCredential.user;
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'account-exists-with-different-credential') {
+          print("Account exists with different credentials");
+        } else if (e.code == 'invalid-credential') {
+          print("Invalid Credentials");
+        }
+      } catch (e) {
+        print("Error: $e");
+      }
     }
+
+    return user;
   }
 
   Future<void> signOut() async {

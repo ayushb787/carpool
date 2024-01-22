@@ -165,60 +165,60 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                 style: TextStyle(
                                     fontSize: sScaler.getTextSize(11))),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: Container(
-                              width: double.infinity,
-                              child: TextFormField(
-                                controller: nameController,
-                                autofocus: false,
-                                autofillHints: const [AutofillHints.email],
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelText: 'Name',
-                                  labelStyle: TextStyle(
-                                      fontSize: sScaler.getTextSize(11)),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFF4B39EF),
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  filled: true,
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                                style: TextStyle(
-                                    fontSize: sScaler.getTextSize(12)),
-                                keyboardType: TextInputType.name,
-                              ),
-                            ),
-                          ),
+                          // Padding(
+                          //   padding: const EdgeInsets.all(8),
+                          //   child: Container(
+                          //     width: double.infinity,
+                          //     child: TextFormField(
+                          //       controller: nameController,
+                          //       autofocus: false,
+                          //       autofillHints: const [AutofillHints.email],
+                          //       obscureText: false,
+                          //       decoration: InputDecoration(
+                          //         labelText: 'Name',
+                          //         labelStyle: TextStyle(
+                          //             fontSize: sScaler.getTextSize(11)),
+                          //         enabledBorder: OutlineInputBorder(
+                          //           borderSide: BorderSide(
+                          //             color: FlutterFlowTheme.of(context)
+                          //                 .primaryBackground,
+                          //             width: 2,
+                          //           ),
+                          //           borderRadius: BorderRadius.circular(12),
+                          //         ),
+                          //         focusedBorder: OutlineInputBorder(
+                          //           borderSide: const BorderSide(
+                          //             color: Color(0xFF4B39EF),
+                          //             width: 2,
+                          //           ),
+                          //           borderRadius: BorderRadius.circular(12),
+                          //         ),
+                          //         errorBorder: OutlineInputBorder(
+                          //           borderSide: BorderSide(
+                          //             color: FlutterFlowTheme.of(context)
+                          //                 .alternate,
+                          //             width: 2,
+                          //           ),
+                          //           borderRadius: BorderRadius.circular(12),
+                          //         ),
+                          //         focusedErrorBorder: OutlineInputBorder(
+                          //           borderSide: BorderSide(
+                          //             color: FlutterFlowTheme.of(context)
+                          //                 .alternate,
+                          //             width: 2,
+                          //           ),
+                          //           borderRadius: BorderRadius.circular(12),
+                          //         ),
+                          //         filled: true,
+                          //         fillColor: FlutterFlowTheme.of(context)
+                          //             .primaryBackground,
+                          //       ),
+                          //       style: TextStyle(
+                          //           fontSize: sScaler.getTextSize(12)),
+                          //       keyboardType: TextInputType.name,
+                          //     ),
+                          //   ),
+                          // ),
                           Padding(
                             padding: const EdgeInsets.all(8),
                             child: Container(
@@ -409,58 +409,58 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: FlutterFlowChoiceChips(
-                              options: const [
-                                ChipData('Male', FontAwesomeIcons.person),
-                                ChipData('Female', FontAwesomeIcons.personDress)
-                              ],
-                              onChanged: (val) {
-                                setState(() {
-                                  choiceChipsValue = val?.first;
-                                });
-                              },
-                              selectedChipStyle: ChipStyle(
-                                backgroundColor: const Color(0xFF39D2C0),
-                                textStyle: TextStyle(
-                                  fontSize: sScaler.getTextSize(11),
-                                  fontFamily: 'Readex Pro',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                ),
-                                iconColor:
-                                    FlutterFlowTheme.of(context).primaryText,
-                                iconSize: sScaler.getTextSize(13),
-                                elevation: 4,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              unselectedChipStyle: ChipStyle(
-                                backgroundColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                textStyle: TextStyle(
-                                  fontSize: sScaler.getTextSize(11),
-                                  fontFamily: 'Readex Pro',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                ),
-                                iconColor:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                iconSize: sScaler.getTextSize(13),
-                                elevation: 0,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              chipSpacing: 12,
-                              rowSpacing: 12,
-                              multiselect: false,
-                              alignment: WrapAlignment.start,
-                              controller: choiceChipsValueController ??=
-                                  FormFieldController<List<String>>(
-                                [],
-                              ),
-                              // wrapped: true,
-                            ),
-                          ),
+                          // Padding(
+                          //   padding: const EdgeInsets.all(8),
+                          //   child: FlutterFlowChoiceChips(
+                          //     options: const [
+                          //       ChipData('Male', FontAwesomeIcons.person),
+                          //       ChipData('Female', FontAwesomeIcons.personDress)
+                          //     ],
+                          //     onChanged: (val) {
+                          //       setState(() {
+                          //         choiceChipsValue = val?.first;
+                          //       });
+                          //     },
+                          //     selectedChipStyle: ChipStyle(
+                          //       backgroundColor: const Color(0xFF39D2C0),
+                          //       textStyle: TextStyle(
+                          //         fontSize: sScaler.getTextSize(11),
+                          //         fontFamily: 'Readex Pro',
+                          //         color:
+                          //             FlutterFlowTheme.of(context).primaryText,
+                          //       ),
+                          //       iconColor:
+                          //           FlutterFlowTheme.of(context).primaryText,
+                          //       iconSize: sScaler.getTextSize(13),
+                          //       elevation: 4,
+                          //       borderRadius: BorderRadius.circular(16),
+                          //     ),
+                          //     unselectedChipStyle: ChipStyle(
+                          //       backgroundColor: FlutterFlowTheme.of(context)
+                          //           .secondaryBackground,
+                          //       textStyle: TextStyle(
+                          //         fontSize: sScaler.getTextSize(11),
+                          //         fontFamily: 'Readex Pro',
+                          //         color: FlutterFlowTheme.of(context)
+                          //             .secondaryText,
+                          //       ),
+                          //       iconColor:
+                          //           FlutterFlowTheme.of(context).secondaryText,
+                          //       iconSize: sScaler.getTextSize(13),
+                          //       elevation: 0,
+                          //       borderRadius: BorderRadius.circular(16),
+                          //     ),
+                          //     chipSpacing: 12,
+                          //     rowSpacing: 12,
+                          //     multiselect: false,
+                          //     alignment: WrapAlignment.start,
+                          //     controller: choiceChipsValueController ??=
+                          //         FormFieldController<List<String>>(
+                          //       [],
+                          //     ),
+                          //     // wrapped: true,
+                          //   ),
+                          // ),
                           Padding(
                             padding: const EdgeInsets.all(8),
                             child: FFButtonWidget(
